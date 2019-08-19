@@ -1,0 +1,23 @@
+{
+  "name": "bitmapfontgenerator",
+  "version": "3.4.1",
+  "author": "Steven Hugg",
+  "description": "Bitmap font generator for 8bitworkshop.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sehugg/bitmapfontgenerator.git"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jquery": "^3.3.29",
+    "@types/w2ui": "^1.4.x",
+    "typescript": "^3.3.3"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "8bit"
+  ]
+}

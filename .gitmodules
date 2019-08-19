@@ -1,0 +1,6 @@
+[submodule "bitmap-fonts"]
+	path = bitmap-fonts
+	url = https://github.com/Tecate/bitmap-fonts
+[submodule "ibmfonts"]
+	path = ibmfonts
+	url = https://github.com/farsil/ibmfonts
