@@ -287,7 +287,10 @@ function encodeFont() {
       s += "#define HICHAR " + params.hichar + "\n";
       s += "#define FONT_BWIDTH " + (params.wbytes*params.np) + "\n";
       s += "#define FONT_HEIGHT " + params.height + "\n";
-      s += "const char FONT[HICHAR-LOCHAR+1][FONT_HEIGHT*FONT_BWIDTH] = {\n";
+      if (params.output=='c_flat')
+          s += "const char FONT[] = {\n";
+      else
+          s += "const char FONT[HICHAR-LOCHAR+1][FONT_HEIGHT*FONT_BWIDTH] = {\n";
     } else {
       s += "LOCHAR\t\tequ " + params.lochar + "\n";
       s += "HICHAR\t\tequ " + params.hichar + "\n";
@@ -301,6 +304,7 @@ function encodeFont() {
         if (glyph) {
             encodeGlyph(glyph, bytes);
             if (params.output=='c_nested') s += "{ ";
+            else if (params.output=='c_flat' && chord>params.lochar) s += ",";
             else if (params.output=='dasm') s += "\thex\t";
             else if (params.output=='zmac') s += "\tdb\t";
             for (var i=0; i<bytes.length; i++) {
